@@ -93,7 +93,7 @@ public class Array2Example {
 				
 			}
 			
-			System.out.printf("%d행의 합 :",i+1);
+			System.out.printf("%d행의 합 :",row+1);
 			System.out.println(sum);
 			
 		}

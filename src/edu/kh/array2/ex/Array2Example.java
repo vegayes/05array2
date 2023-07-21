@@ -90,14 +90,41 @@ public class Array2Example {
 			for (int col = 0; col < arr[row].length; col++) { // 열 반복
 				
 				sum += arr[row][col];
-				
+				//         0    0   --> 1
+				//         0    1   --> 2
+				//         0    2   --> 3
+	// -----------------------------------------------
+				//         1    0   --> 4
+				//         1    1   --> 5
+				//         1    2   --> 6
+	// -----------------------------------------------
+				//         2    0   --> 7
+				//         2    1   --> 8
+				//         2    2   --> 9
 			}
 			
-			System.out.printf("%d행의 합 :",row+1);
-			System.out.println(sum);
+			System.out.printf("%d행의 합 : %d\n",row, sum);
 			
 		}
-				
+			
+		int sum2 = 0;
+
+		System.out.println("-".repeat(50));
+		
+		for ( int a = 0; a < arr.length; a++) {
+			
+			int sum =0;
+			
+			for( int b = 0; b< arr[a].length; b++) {
+				sum+= arr[b][a];
+			}
+			
+			System.out.printf("%d열의 합 : %d\n",a, sum);
+			sum2 += sum;
+		}
+		
+		System.out.println("전체 합 :"+sum2);
+	
 				
 				
 				

@@ -8,7 +8,8 @@ public class Array2Run {
 		
 	
 //		ae2.ex1();
-		ae2.ex2();
+//		ae2.ex2();
+		ae2.ex3();
 		
 		
 	}

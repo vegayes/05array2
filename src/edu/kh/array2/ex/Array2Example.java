@@ -2,7 +2,10 @@ package edu.kh.array2.ex;
 
 import java.util.Arrays;
 
+import java.util.Scanner;
+
 public class Array2Example {
+	Scanner sc = new Scanner(System.in);
 
 	/*
 	 * 2차원 배열
@@ -189,27 +192,73 @@ public class Array2Example {
 		// 1) 2차원 배열을 이용해서 25까지 랜덤한 값을 => 5로 나누어서 대입하기
 		// 2) 
 		
-		int[][] bingo;
-		bingo = new int[5][5];
 		
+		final int size = 5;
+		
+		int[][] bingo, bingo2, bingoChk;
+		bingo = new int[size][size]; // 좌표 출력용
+		bingo2 = new int[size][size]; // 숫자 저장용
+		bingoChk = new int[size][size]; // 빙고가 몇 줄인지 체크하는 배열
+		
+		
+		int x = 0;
+		int y = 0; 
+		int tmp = 0; // 빙고 숫자 섞어줄 때 사용
+		
+		int bcnt = 0; // 배열에 숫자가 있는지 체크 할 bcnt.
+		int totCnt = 0 ; // 빙고 갯수 카운트
+		int num = 0;
+	
 		
 		int random = (int) (Math.random()*25 +1);
-		
-		for ( int col = 0; col <bingo.length; col++) {
+
+		for ( int row = 0; row <bingo.length; row++) {
 			
-			for ( int row = 0; row < bingo[col].length; row++) {
+			for ( int col = 0; col < bingo[row].length; col++) {
 				
-				
+				bingo[row][col] = row * size  + col + 1 ;  // 배열에 1~25 저장
+					
 			}
-			
-			
+		}
+		
+		// 값 섞기
+		for ( int row = 0; row < size; row++ ) {
+			for( int col = 0; col < size; col++) {
+				
+				x = (int) (Math.random() * size);
+				y = (int) (Math.random() * size); // 좌표 값
+				
+				tmp = bingo[row][col];
+				bingo[row][col] = bingo[x][y];
+				bingo[x][y] = tmp;
+			}
 		}
 		
 		
-		
-		
-		
-		
+		do {
+			for(int row= 0 ; row < size ; row++) {
+				for(int col = 0 ; col < size ; col++) {
+					System.out.printf("%2d ", bingo[row][col]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+			
+			System.out.printf("1~25의 숫자를 입력하세요. ( 종료 : 0)  > ");
+			num = sc.nextInt(); 
+			
+			//0으로 바꾸기 
+			for ( int row = 0; row < size; row++) {		
+				for( int col = 0; col < size; col++) {			
+					if( bingo[row][col] == num) {					
+						bingo[row][col] = 0;
+						break;			
+					}			
+				}				
+			}		
+		} while(num != 0 );
+			
+			System.out.println("종료합니다.");
 	}
 	
 	

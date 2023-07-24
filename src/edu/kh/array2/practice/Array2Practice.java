@@ -59,6 +59,29 @@ public class Array2Practice {
 	
 	public void practice3() {
 		
+		int[][] array = new int[4][4];
+
+		// 저장
+		for (int row = array.length; row > 0; row--) {
+
+			for (int col =  array[row].length ; col > 0; col--) {
+
+				array[row][col] = row * 4 + col * 4 ;
+
+			}
+		}
+
+		// 출력
+		for (int row = 0; row < array.length; row++) {
+			for (int col = 0; col < array[row].length; col++) {
+
+				System.out.print("  "+array[row][col]);
+
+			}
+
+			System.out.println();
+
+		}
 		
 		
 		

@@ -148,31 +148,55 @@ public class Array2Practice {
 
 	}
 
-	public void practice5() {
-		
+	public void practice5() {// 안했음..
+
 		while (true) {
 			System.out.print("행 크기 :");
 			int col = sc.nextInt();
 
-
-				
-
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			}
-
 		}
 
-	
+	}
+
+	public void practice6() {
+
+		// 가변 배열 사용!
+
+		System.out.print("행의 크기 : ");
+		int col = sc.nextInt();
+
+		char[][] arr = new char[col][];
+
+		for (int i = 0; i < col; i++) {
+
+			System.out.printf("%d열의 크기 : ", i);
+			int row = sc.nextInt();
+
+			arr[i] = new char[row];
+		}
+
+		char ch = 'a';
+		// 값 할당
+		for (int a = 0; a < arr.length; a++) {
+
+			for (int b = 0; b < arr[a].length; b++) {
+
+				arr[a][b] = ch;
+
+				ch++;
+			}
+		}
+
+		// 출력
+		for (int a = 0; a < arr.length; a++) {
+
+			for (int b = 0; b < arr[a].length; b++) {
+
+				System.out.print(arr[a][b]+" ");
+			}
+			System.out.println();
+		}
+
+	}
 
 }

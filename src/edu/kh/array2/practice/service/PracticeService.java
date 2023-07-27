@@ -13,6 +13,21 @@ public class PracticeService {
 		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배",
 				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
 		
+		String[][] group1 = new String[3][2];
+		String[][] group2 = new String[3][2];
+		
+		
+		// 1분단 저장
+		for (int i = 0 ; i < group1.length; i++) {
+			
+			for ( int j = 0; j < group1[i].length ; j++ ) {
+				
+				
+				
+				
+			}
+			
+		}
 		
 		
 		

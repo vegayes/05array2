@@ -149,10 +149,62 @@ public class Array2Practice {
 	}
 
 	public void practice5() {// 안했음..
+		
+		char temp = 'A';
 
 		while (true) {
 			System.out.print("행 크기 :");
 			int col = sc.nextInt();
+			if(col < 1 || col > 10) {
+				System.out.println("반드시 1~10사이의 정수를 입력해야 합니다.");
+				continue;
+			}
+			
+			System.out.print("열 크기 :");
+			int row = sc.nextInt();
+			if(row < 1 || row > 10) {
+				System.out.println("반드시 1~10사이의 정수를 입력해야 합니다.");
+				continue;
+			}
+			
+			// 배열에 저장
+			char[][] arr = new char[col][row];
+			for ( int i = 0 ; i < arr.length; i++) {
+				
+				for ( int j =0 ; j < arr[i].length; j++) {
+					
+					arr[i][j]=temp;
+					temp++;
+				}
+			}
+			
+			int x = 0;
+			int y = 0; 
+			char tmp = 0;
+			
+			// 값 섞기
+			for ( int i = 0; i < arr.length; row++ ) {
+				for( int j = 0; j < arr[i].length; col++) {
+					
+					x = (int) (Math.random() * i);
+					y = (int) (Math.random() * j); 
+					
+					tmp = arr[i][j];
+					arr[i][j] = arr[x][y];
+					arr[x][y] = tmp;
+				}
+			}
+			
+			// 출력
+			for ( int i = 0 ; i < arr.length; i++) {
+				
+				for ( int j =0 ; j < arr[i].length; j++) {
+					
+					System.out.println(arr[i][j]);
+				}
+			}
+			
+			break;
 
 		}
 

@@ -174,8 +174,9 @@ public class Array2Practice {
 				for ( int j =0 ; j < arr[i].length; j++) {
 					
 					arr[i][j]=temp;
-					temp++;
+					temp++;	
 				}
+
 			}
 			
 			int x = 0;
@@ -183,8 +184,8 @@ public class Array2Practice {
 			char tmp = 0;
 			
 			// 값 섞기
-			for ( int i = 0; i < arr.length; row++ ) {
-				for( int j = 0; j < arr[i].length; col++) {
+			for ( int i = 0; i < arr.length; i++ ) {
+				for( int j = 0; j < arr[i].length; j++) {
 					
 					x = (int) (Math.random() * i);
 					y = (int) (Math.random() * j); 
@@ -200,8 +201,9 @@ public class Array2Practice {
 				
 				for ( int j =0 ; j < arr[i].length; j++) {
 					
-					System.out.println(arr[i][j]);
+					System.out.print(arr[i][j]+" ");
 				}
+				System.out.println();
 			}
 			
 			break;
